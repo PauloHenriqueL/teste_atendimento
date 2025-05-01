@@ -20,5 +20,4 @@ class Tprefeidade(models.Model):
 
     class Meta:
         managed = False
-        ordering = ['nome']
-        db_table = '"hamilton"."terapeutas"'
+        db_table = '"hamilton"."terapeutas_prefeidades"'
