@@ -16,7 +16,7 @@ class Tprefeidade(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.prefeidade
+        return self.pk_terapeuta_prefeidade
 
     class Meta:
         managed = False
