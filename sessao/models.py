@@ -1,7 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from prefeidades.models import Prefeidade
-from terapeuta.models import Terapeuta
+from atendimentos.models import AtendimentoMensal
 from django.core.validators import MinValueValidator, MaxValueValidator
 
 
@@ -11,7 +10,7 @@ class Sessao(models.Model):
         ('TERAPEUTA', 'Terapeuta'),
         ('PACIENTE', 'Paciente'),
     ]
-    fk_atendimento_mensal = models.ForeignKey('AtendimentoMensal', on_delete=models.CASCADE, related_name='sessoes', db_column='fk_atendimento_mensal')
+    fk_atendimento_mensal = models.ForeignKey(AtendimentoMensal, on_delete=models.CASCADE, related_name='sessoes', db_column='fk_atendimento_mensal')
     dia_sessao = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(31)], null=False)
     realizado = models.BooleanField(default=False, null=False)
     responsavel_cancelamento = models.CharField(max_length=10, choices=RESPONSAVEL_CHOICES, null=True, blank=True)
