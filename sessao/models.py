@@ -16,7 +16,7 @@ class Sessao(models.Model):
     responsavel_cancelamento = models.CharField(max_length=10, choices=RESPONSAVEL_CHOICES, null=True, blank=True)
     pago = models.BooleanField(default=False, null=False)
     is_active = models.BooleanField(default=True, null=False)
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):

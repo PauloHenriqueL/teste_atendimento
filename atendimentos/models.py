@@ -17,7 +17,7 @@ class AtendimentoMensal(models.Model):
     vlr_sessao = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0)], null=False)
     vlr_pago_total = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0)], default=0, null=False)
     is_active = models.BooleanField(default=True, null=False)
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):

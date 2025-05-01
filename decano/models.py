@@ -12,7 +12,7 @@ class Decano(models.Model):
     telefone = models.CharField(max_length=20, null=False)
     dat_nascimento = models.DateField(null=False)
     is_active = models.BooleanField(default=True, null=False)
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):

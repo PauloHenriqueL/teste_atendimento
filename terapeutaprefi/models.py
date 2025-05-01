@@ -7,7 +7,7 @@ class Tprefeidade(models.Model):
     pk_terapeuta_prefeidade = models.AutoField(primary_key=True)
     fk_terapeuta = models.ForeignKey(Terapeuta, on_delete=models.CASCADE, db_column='fk_terapeuta')
     fk_prefeidade = models.ForeignKey(Prefeidade, on_delete=models.CASCADE, db_column='fk_prefeidade')
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):
@@ -15,8 +15,6 @@ class Tprefeidade(models.Model):
             self.updated_at = timezone.now()
         super().save(*args, **kwargs)
 
-    def __str__(self):
-        return self.pk_terapeuta_prefeidade
 
     class Meta:
         managed = False

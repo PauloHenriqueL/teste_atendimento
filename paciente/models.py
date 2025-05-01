@@ -16,7 +16,7 @@ class Paciente(models.Model):
     qtd_sessao = models.IntegerField(null=False)
     fk_captacao = models.ForeignKey(Captacao, on_delete=models.CASCADE, related_name='pacientes', db_column='fk_captacao')
     is_active = models.BooleanField(default=True, null=False)
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):

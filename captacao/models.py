@@ -6,7 +6,7 @@ class Captacao(models.Model):
     pk_captacao = models.AutoField(primary_key=True)
     nome = models.TextField(null=False)
     is_active = models.BooleanField(default=True, null=False)
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):

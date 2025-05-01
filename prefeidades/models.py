@@ -6,7 +6,7 @@ class Prefeidade(models.Model):
     pk_prefeidade = models.AutoField(primary_key=True)
     prefeidade = models.CharField(max_length=20, null=False)
     idade_maxima = models.IntegerField(null=False)
-    created_at = models.DateTimeField(default=timezone.now, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):

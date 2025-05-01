@@ -5,7 +5,7 @@ from django.utils import timezone
 class Abordagem(models.Model):
     pk_abordagem = models.AutoField(primary_key=True)
     abordagem = models.TextField(null=False)
-    created_at = models.DateTimeField(auto_now_add=True, null=False)
+    created_at = models.DateTimeField(auto_now=True, null=False)
     updated_at = models.DateTimeField(auto_now=True, null=False)
 
     def save(self, *args, **kwargs):
