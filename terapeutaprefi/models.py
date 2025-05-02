@@ -15,7 +15,7 @@ class Tprefeidade(models.Model):
             self.updated_at = timezone.now()
         super().save(*args, **kwargs)
 
-
+#teste
     class Meta:
         managed = False
         db_table = '"hamilton"."terapeutas_prefeidades"'
